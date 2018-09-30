@@ -2,6 +2,7 @@ import React from 'react';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import UserButton from './UserButton';
+import UserInfo from './UserInfo';
 
 export default class UsersView extends React.Component {
   state = { displayUserId: null };
@@ -44,30 +45,7 @@ export default class UsersView extends React.Component {
         {displayUserId === null ? (
           'No user selected.'
         ) : (
-          <Query
-            query={gql`
-              query getUser($id: ID) {
-                user(id: $id) @client {
-                  id
-                  name
-                  email
-                }
-              }
-            `}
-            variables={{ id: displayUserId }}
-          >
-            {({ loading, error, data }) => {
-              const user = data.user;
-              if (!data || !user) return null;
-              return (
-                <ul>
-                  <li>Id: {user.id}</li>
-                  <li>Name: {user.name}</li>
-                  <li>Email: {user.email}</li>
-                </ul>
-              );
-            }}
-          </Query>
+          <UserInfo userId={this.state.displayUserId} />
         )}
       </React.Fragment>
     );

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default ({ user, setDisplayUserId }) => (
+const UserButton = ({ user, setDisplayUserId }) => (
   // eslint-disable-next-line
   <a
     href="#"
@@ -12,3 +12,5 @@ export default ({ user, setDisplayUserId }) => (
     {user.name}
   </a>
 );
+
+export default UserButton;
