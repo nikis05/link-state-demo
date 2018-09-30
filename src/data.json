@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "__typename": "User",
+      "id": 0,
+      "name": "Kit Isaev",
+      "email": "nikis05@mail.ru"
+    },
+    {
+      "__typename": "User",
+      "id": 1,
+      "name": "John Doe",
+      "email": "mail@example.com"
+    },
+    {
+      "__typename": "User",
+      "id": 2,
+      "name": "Foo Bar",
+      "email": "baz@boo.com"
+    }
+  ]
+}
